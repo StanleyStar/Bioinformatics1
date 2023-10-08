@@ -1,0 +1,33 @@
+# Consider the dna sequence, AGTTAGCTAGGAG
+
+# How many nucleotides are present?
+dna = "AGTTAGCTAGGAG"
+dna_length = len(dna)
+print(dna_length)
+
+# Calculate the percentage GC in the sequence
+g_count = dna.count('G')
+c_count = dna.count("C")
+gc_count = g_count + c_count
+print("The GC count is", g_count + c_count)
+
+gc_content = (gc_count / dna_length) * 100
+print("The GC content is", gc_content)
+# To get the output in 2 decimal, use the 'round' function and add the number to be rounded to
+gc_rounded = round(gc_content, 2)
+print("The approximated GC content is", gc_rounded)
+
+# How many purines are present?
+purine_count = dna.count('A') + dna.count('G')
+print("There are", purine_count, "purines in the sequence")
+
+# How many pyrimidines are present?
+t_count = dna.count("T")
+pyrimidine_count = t_count + c_count
+print("There are", pyrimidine_count, "pyrimidines in the sequence")
+
+# Calculate the percentage of purines in the sequence
+purine_percent = (purine_count / dna_length) * 100
+print(purine_percent)
+purine_percent_rounded = round(purine_percent, 4)
+print("The purine percentage in 4 decimal place is", purine_percent_rounded)
