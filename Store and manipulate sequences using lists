@@ -1,0 +1,63 @@
+# Create a list
+mylist = ['A', 'T', 'C', 'G']
+
+# Create an empty list
+emptylist = []
+
+# Create list with subsequences
+subsequences = ['TTA', 'GCTAAG', 'GATTA']
+
+# Convert string to list
+string = 'ATCGA'
+stringtolist = list(string)
+print(stringtolist)
+
+# Find number of elements in the list
+listlength = len(mylist)
+print(listlength)
+
+# Add new elements to the list
+mylist.append("GT")
+print(mylist)
+# Notice that here we don't need to assign to a variable
+
+# Let's look at indexing and slicing
+# Find the first member (element) of the list
+first_member = mylist[0]
+print(first_member)
+first_three_member = mylist[0:3]
+print(first_three_member)
+
+# Sorting a list NB: Sorting a list changes the original list object
+mylist.sort()
+print(mylist)
+
+# Reverse the list
+mylist.reverse()
+print(mylist)
+
+# Insert the codon "TTA" into the first position of the list
+mylist.insert(0, "TTA")
+print(mylist)
+
+# Delete items from the list
+# Approach 1 - by indexing
+# Delete item in the 1st position
+del mylist[0]
+print(mylist)
+
+# Approach 2 - by item value
+# Let's delete GT
+mylist.remove("GT")
+print(mylist)
+# Note that if we have several GT in this list, it'll only delete the first one
+
+# To change an item
+# Change T to GGT
+mylist[0]="GGT"
+print(mylist)
+
+# Convert list to string
+list_to_string = "".join(mylist)
+print(list_to_string)
+# This only works when all the list objects are strings
