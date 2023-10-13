@@ -1,0 +1,38 @@
+# The method of finding reverse sequence depends on the data type
+
+# Let's start with slicing for string data types
+dna1 = "ATCTAGAGGATATAC"
+reversed_sequence = dna1[::-1]
+print(reversed_sequence)
+
+# When dealing with list data types, there are three approaches we can use
+
+# Approach 1: Convert list to string and find the reverse using slicing
+dna2 = ['A', 'T', 'C', 'T', 'A', 'G', 'A', 'G', 'G', 'A', 'T', 'A', 'T', 'A', 'C']
+string = "".join(dna2)
+print(string)
+reversed_sequence_2 = string[::-1]
+print(reversed_sequence_2)
+
+# Approach 2: We use list slicing and convert to a string
+dna2 = ['A', 'T', 'C', 'T', 'A', 'G', 'A', 'G', 'G', 'A', 'T', 'A', 'T', 'A', 'C']
+reversed_sequence_3 = dna2[::-1]
+print(reversed_sequence_3)
+reversed_sequence_3 = "".join(reversed_sequence_3)
+print(reversed_sequence_3)
+
+# Approach 3: We apply the reverse_method on the list and convert the list to a sting
+dna2 = ['A', 'T', 'C', 'T', 'A', 'G', 'A', 'G', 'G', 'A', 'T', 'A', 'T', 'A', 'C']
+# NB: This method modifies the original list, we don't want to lose the original list so let's make a copy
+# Make a copy of the dna2 list like this
+sequence_copy = []
+sequence_copy.extend(dna2)
+print(sequence_copy)
+
+# Now let's do the reverse_method on the list
+sequence_copy.reverse()
+print(sequence_copy)
+
+# Lastly, we covert the reversed list to string data type
+reversed_sequence_4 = "".join(sequence_copy)
+print(reversed_sequence_4)
