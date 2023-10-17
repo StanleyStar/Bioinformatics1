@@ -1,0 +1,65 @@
+# How to create and use a function
+#   First line
+#       - Declare the function by using the keyword def. This is followed by the function name and then a parentheses
+#       - Parameters maybe added to the function: If adding parameters they should be within the parentheses of the fxn
+#       - End the line with a colon
+#   Subsequent lines will contain statements that the functions should execute
+#   When expecting the function to generate an output which will be used outside that function, a return is used to end the function
+
+# Calculating percentage GC of a sequence
+dna = "AGTTAGCTAGGAG"
+dna_length = len(dna)
+gc_count = dna.count('G') + dna.count('C')
+gc_content = (gc_count / dna_length) * 100
+gc_rounded = round(gc_content, 2)
+print("The approximated GC content is", gc_rounded)
+
+# Let's create a function for the formula
+def percentage_gc():
+    dna = "AGTTAGCTAGGAG"
+    dna_length = len(dna)
+    gc_count = dna.count('G') + dna.count('C')
+    gc_content = (gc_count / dna_length) * 100
+    gc_rounded = round(gc_content, 2)
+    print("The approximated GC content is", gc_rounded)
+
+# To use the defined function, all we have to do is call the function name ie percentage_gc
+percentage_gc()
+
+# A function with the return keyword. Let's return the gc_rounded
+def percentage_gc():
+    dna = "AGTTAGCTAGGAG"
+    dna_length = len(dna)
+    gc_count = dna.count('G') + dna.count('C')
+    gc_content = (gc_count / dna_length) * 100
+    gc_rounded = round(gc_content, 2)
+    return gc_rounded
+gc_value = percentage_gc()
+print(gc_value)
+# Using the return statement, we can now access values or variables individually
+
+# A function with a parameter (these parameters are placed in the parentheses) - notice the placeholder (sequence) that I used in the first two lines
+def percentage_gc(sequence):
+    dna = sequence
+    dna_length = len(dna)
+    gc_count = dna.count('G') + dna.count('C')
+    gc_content = (gc_count / dna_length) * 100
+    gc_rounded = round(gc_content, 2)
+    return gc_rounded
+# We've defined a function to find the percentage gc of the sequences we will provide Python. Now let's use this function with a parameter to find percentage gc of other sequences
+seq1 = "AGCCTTCAG"
+seq2 = "AAATTCGA"
+gc1 = percentage_gc(seq1)
+print(gc1)
+gc2 = percentage_gc(seq2)
+print(gc2)
+
+def percentage_gc(sequence = 'AGGGTC'):
+    dna = sequence
+    dna_length = len(dna)
+    gc_count = dna.count('G') + dna.count('C')
+    gc_content = (gc_count / dna_length) * 100
+    gc_rounded = round(gc_content, 2)
+    return gc_rounded
+gc = percentage_gc()
+print(gc)
